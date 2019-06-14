@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Hello, world!</title>
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="text-align: center">
+        <h1 style="color:black;text-align: center;margin-top: 20px">כניסה</h1>
+        <br></br>
+        <br></br>
+        <form class="form" style="background-color: lightgrey;width:600px;height: 200px;margin:0 auto;padding-top: 40px ">
+            <input id="username" type="text" placeholder="שם משתמש" name="שם משתמש">סיסמא
+            <input id="password" type="text" placeholder="סיסמא" name="סיסמא"> שם משתמש
+            <button onclick="validate()" style="display:block;margin-left: 260px;margin-top: 70px" type="button" class="btn btn-success">כניסה</button>
+        </form>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyAOEDtM48D-_IUz4tMxoxICKr_mx8LAYEo",
+            authDomain: "henyael-180891.firebaseapp.com",
+            databaseURL: "https://henyael-180891.firebaseio.com",
+            projectId: "henyael-180891",
+            storageBucket: "henyael-180891.appspot.com",
+            messagingSenderId: "107919006874",
+            appId: "1:107919006874:web:d87235739bc3a8a9"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script>
+        var database = firebase.firestore();
+        async function getUsers() {
+            const snapshot = await firebase.firestore().collection('users').get()
+            return snapshot.docs.map(doc => doc.data());
+        }
+
+        function validate() {
+            if (document.getElementById("username").value === "simayael" && document.getElementById("password").value === "180891") {
+                window.location.href = "menu.html"
+            } else {
+                var users = getUsers()
+                users.then(function(res) {
+                    res.forEach((x) => {
+                        if (document.getElementById("username").value === x.username && x.password === document.getElementById("password").value) {
+                            window.location.href = "menu2.html"
+                        } else {
+                            alert("no match, try again!")
+                        }
+                    })
+                })
+
+            }
+        }
+    </script>
+</body>
+
+</html>

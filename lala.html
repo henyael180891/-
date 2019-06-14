@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyAOEDtM48D-_IUz4tMxoxICKr_mx8LAYEo",
+      authDomain: "henyael-180891.firebaseapp.com",
+      databaseURL: "https://henyael-180891.firebaseio.com",
+      projectId: "henyael-180891",
+      storageBucket: "henyael-180891.appspot.com",
+      messagingSenderId: "107919006874",
+      appId: "1:107919006874:web:d87235739bc3a8a9"
+    };
+
+
+    firebase.initializeApp(firebaseConfig);
+
+  </script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  </script>
+  <style>
+   input[type=text], select {
+  width: 100%;
+  padding: 12px 10px;
+  margin: 8px 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-top: 100px;
+}
+  </style>
+</head>
+
+<body>
+  <h2 style="text-align: center">טופס הרשמה </h2>
+<div>
+        <form style="direction: rtl">
+          <label style="margin-left: 1470px">שם פרטי</label>
+          <input type="text" id="firstname" name="firstname" placeholder="Your first name..">
+          <label style="margin-left: 1450px">שם משפחה</label>
+          <input   type="text" id="lastname" name="lastname" placeholder="Your last name..">
+          <label style="margin-left: 1490px" >אימייל</label>
+          <input  type="text" id="email" name="email" placeholder="Your email..">
+          <label  style="margin-left: 1490px">סיסמא</label>
+          <input   type="text" id="password" name="password" placeholder="Your password..">
+          <label style="margin-left: 1450px" >שם משתמש</label>
+          <input   type="text" id="username" name="username" placeholder="Your user name..">
+          <label style="margin-left: 1650px" >עיר</label>
+          <input   type="text" id="adress" name="adress" placeholder="Your city ..">
+          <button onclick="sign()" style="margin-left:750px"type="button" class="btn btn-success">הרשמה</button>
+        <button onclick="home()" style="margin-left:735px;margin-top:20px;background-color:red" type="button" class="btn btn-success">חזרה לראשי</button>
+        </form>
+      </div>
+      
+
+      </html>
+
+      <script>
+            async function getUsers() {
+              const snapshot = await firebase.firestore().collection('users').get()
+              return snapshot.docs.map(doc => doc.data());
+          }
+             function home() {
+                document.location.href = "hen.html"
+              }
+          
+              function sign() {
+                var database=firebase.firestore()
+                var users = getUsers();
+                users.then(function(res){
+                  var index=res.length
+                  var arr=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v'] 
+                var Username = document.getElementById("username").value
+                var Firstname = document.getElementById("firstname").value
+                var Lastname = document.getElementById("lastname").value
+                var Adress = document.getElementById("adress").value
+                var Email = document.getElementById("email").value
+                var Password = document.getElementById("password").value
+                var database = firebase.firestore();
+                 database.collection("users").doc(`${arr[index+1]}`).set({
+                   firstname: Firstname,
+                   lastname: Lastname,
+                   email: Email,
+                   adress: Adress,
+                   username: Username,
+                   password: Password,
+                  })
+                
+                  .then(function () {
+                     alert("ההרשמה בוצעה :" + " " + firstname.value + " " + lastname.value + " " + "נרשמת למערכת")
+                   })
+                   .catch(function (error) {
+                     console.error("Error writing document: ", error);
+                   });
+                  })}
+            </script>
+</body>
+
+</html>

@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Hello, world!</title>
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyAOEDtM48D-_IUz4tMxoxICKr_mx8LAYEo",
+            authDomain: "henyael-180891.firebaseapp.com",
+            databaseURL: "https://henyael-180891.firebaseio.com",
+            projectId: "henyael-180891",
+            storageBucket: "henyael-180891.appspot.com",
+            messagingSenderId: "107919006874",
+            appId: "1:107919006874:web:d87235739bc3a8a9"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <h1 style="color:black;text-align: center ">רכישות אונליין</h1>
+    <br>
+</body>
+<br></br>
+<div class="container" style="text-align: center">
+    <div class="row">
+        <div class="col-4">
+            <h5 style="color: black">מסכת חמאה להזנה עמוקה 500 מ"ל - Schwarzkopf</h5>
+            <img src="https://files-ptdpritol.netdna-ssl.com/system/photos/3306835/show/77bb79312932085bb6eec3a870ffd0cb.jpg" alt="Smiley face" height="140" width="140">
+            <div style="margin-top: 5%" id="buttons">
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="לשיער מתולתל רגיל עד עבה
+                ">
+                    ?
+                </button>
+                <button type="button" class="btn btn-success">הזמן</button>
+                <select style="color:green;height:38px;width:40px;padding-bottom: 2%;text-align: center;border-radius:8px" ; class="list">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <br></br>
+                <p style="color:red"><span class="1">89</span><span> :מחיר</span></p>
+            </div>
+        </div>
+        <div class="col-4">
+            <h5 style="color: black">שמפו ללא סולפט לשיער גלי ליטר - Schwarzkopf</h5>
+            <img src="https://files-ptdpritol.netdna-ssl.com/system/photos/3306803/show/e7fa5e3b40dc9cc27f23eb061fe7d96c.jpg" alt="Smiley face" height="140" width="140">
+            <div style="margin-top: 5%" id="buttons">
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="ללא מלחים - לכל סוגי שיער גלי
+                ">
+                    ?
+                </button>
+                <button type="button" class="btn btn-success">הזמן</button>
+                <select style="color:green;height:38px;width:40px;padding-bottom: 2%;text-align: center;border-radius:8px" ; class="list">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <br></br>
+                <p style="color:red"><span class="1">79</span><span> :מחיר</span></p>
+            </div>
+        </div>
+        <div class="col-4">
+            <h5 style="color: black">שמפו ללא סולפט לשיער מתולתל ליטר - Schwarzkopf</h5>
+            <img src="https://files-ptdpritol.netdna-ssl.com/system/photos/3306782/show/06e610e9c8b3b470066bad2d9965e877.jpg" alt="Smiley face" height="140" width="140">
+            <div style="margin-top: 5%" id="buttons">
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="ללא מלחים - לכל סוגי שיער מתולתל
+                ">
+                    ?
+                </button>
+                <button type="button" class="btn btn-success">הזמן</button>
+                <select style="color:green;height:38px;width:40px;padding-bottom: 2%;text-align: center;border-radius:8px" ; class="list">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <br></br>
+                <p style="color:red"><span class="1">99</span><span> :מחיר</span></p>
+            </div>
+        </div>
+    </div>
+    <br></br>
+    <br></br>
+    <div class="row">
+        <div class="col-4">
+            <h5 style="color: black">שמפו קרטין 007 גדול ליטר - BIOTOP</h5>
+            <img src="https://files-ptdpritol.netdna-ssl.com/system/photos/1677473/show/ee8d69c75c475cf0c2b53d3c5f707bbe.jpg" alt="Smiley face" height="140" width="140">
+            <div style="margin-top: 5%" id="buttons">
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="לשיער יבש ופגום ושיער לאחר החלקה שמפו 007 ביוטופ קרטין אימפקט 30 שניות פותח במיוחד לטיפול בשיער עבה, יבש, פגום וחסר חיים. מתאים לשימוש לאחר כל סוגי ההחלקות (שמפו ללא מלחים). השמפו מעניק לשיער לחות אינטנסיבית, ברק עמוק וחיות הודות לקרטין ולמרכיביו הצמחיים ומונע נפח וחשמל סטטי בשיער. 1000 מ">
+                    ?
+                </button>
+                <button type="button" class="btn btn-success">הזמן</button>
+                <select style="color:green;height:38px;width:40px;padding-bottom: 2%;text-align: center;border-radius:8px" ; class="list">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <br></br>
+                <p style="color:red"><span class="1">99</span><span> :מחיר</span></p>
+            </div>
+        </div>
+        <div class="col-4">
+            <h5 style="color: black">מסכה מרוכזת שיסיידו 500 מ"ל - סנסיאנס</h5>
+            <img src="https://files-ptdpritol.netdna-ssl.com/system/photos/2289310/show/c2e8993e875926ee72e75dacdaf42b87.jpg" alt="Smiley face" height="140" width="140">
+            <div style="margin-top: 5%" id="buttons">
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="טיפול עמוק אידיאלי לשיער יבש, פגום והרוס שמשאיר את השיער במראה אוורירי ומבריק. מתקן את מראה השיער, מונע שבירת השיער וקצוות מפוצלים, תוצאות מידיות, משפר את רכות השיער בצורה מדהימה לאחר השימוש הראשון. מעניק לשיער ברק ומשי. מועשר בתערובת הבלעדית של מעבדות שיסיידו של תחליבי סיליקון, המשלימים לחות וחומצות אמינו חשובות שמבטיחות שיער בריא ורך, PEG90M מרכך פולימרי המעניק ציפוי לשיער. תערובת של סרביטול ובוטלין דליקול-משלימים ומאזנים את רמת הלחות. חומצות אמינו וחומצת גלוטמיק-משלימות את חומצת האמינו העיקריות שאבדו לשיער במהלך השטיםפה והעיצוב היומיומיים. 500 מל לתוצאה אופטימלית מומלץ כטיפול התחלתי לחפוף בשמפו סנסיאנס וכטיפול המשך ל-CPR ולשימוש שבועי במקום מרכך רגיל.">?</button>
+                <button onclick="sum()" type="button" class="btn btn-success">הזמן</button>
+                <select style="color:green;height:38px;width:40px;padding-bottom: 2%;text-align: center;border-radius:8px" ; class="list">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <br></br>
+                <p style="color:red"><span class="1">69</span><span> :מחיר</span></p>
+            </div>
+        </div>
+        <div class="col-4">
+            <h5 style="color: black">ערכה יוקרתית ABSOLUT REPAIR LIPIDIUM - לוריאל</h5>
+            <img src="https://files-ptdpritol.netdna-ssl.com/system/photos/2897327/show/5c52861bb2a819b3145455ba9adc0daa.jpg" alt="Smiley face" height="140" width="140">
+            <div style="margin-top: 5%" id="buttons">
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title=" ללא מלחים לשיער צבוע ופגום ">
+                    ?
+                </button>
+                <button type="button" class="btn btn-success">הזמן</button>
+                <select style="color:green;height:38px;width:40px;padding-bottom: 2%;text-align: center;border-radius:8px" ; class="list">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <br></br>
+                <p style="color:red"><span class="1">49</span><span> :מחיר</span></p>
+            </div>
+        </div>
+    </div>
+    <br></br>
+    <br></br>
+    <div class="row">
+        <div class="col-4">
+            <h5 style="color: black">מסכה משקמת לאחר החלקה 500 מ"ל - ג'ול</h5>
+            <img src="https://files-ptdpritol.netdna-ssl.com/system/photos/2589091/show/a9741bee327a2cdf386feb4c222596e8.jpg" alt="Smiley face" height="140" width="140">
+            <div style="margin-top: 5%" id="buttons">
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="משקמת ושומרת על ההחלקה">
+                    ?
+                </button>
+                <button type="button" class="btn btn-success">הזמן</button>
+                <select style="color:green;height:38px;width:40px;padding-bottom: 2%;text-align: center;border-radius:8px" ; class="list">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <br></br>
+                <p style="color:red"><span class="1">89</span><span> :מחיר</span></p>
+            </div>
+        </div>
+        <div class="col-4">
+            <h5 style="color: black">מסכה גולד קנאביס 500 "ל + 4 אמפולות לשיקום -Wellness</h5>
+            <img src="https://files-ptdpritol.netdna-ssl.com/system/photos/3222144/show/5c6190d38fdc5b72dacf1ce9c175492a.jpg" alt="Smiley face" height="140" width="140">
+            <div style="margin-top: 5%" id="buttons">
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="לשיער יבש ופגום
+                        ">
+                    ?
+                </button>
+                <button type="button" class="btn btn-success">הזמן</button>
+                <select style="color:green;height:38px;width:40px;padding-bottom: 2%;text-align: center;border-radius:8px" ; class="list">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <br></br>
+                <p style="color:red"><span class="1">199</span><span> :מחיר</span></p>
+            </div>
+        </div>
+        <div class="col-4">
+            <h5 style="color: black">מסכת בוץ מגנט 50 מ"ל - More</h5>
+            <img src="https://files-ptdpritol.netdna-ssl.com/system/photos/3191286/show/cde4ecc776bcafaa6e80607b9b4ca869.jpg" alt="Smiley face" height="140" width="140">
+            <div style="margin-top: 5%" id="buttons">
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="משקמת ושומרת על ההחלקה
+                        "> ?
+                </button>
+                <button type="button" class="btn btn-success">הזמן</button>
+                <select style="color:green;height:38px;width:40px;padding-bottom: 2%;text-align: center;border-radius:8px" ; class="list">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <br></br>
+                <p style="color:red"><span class="1">199</span><span> :מחיר</span></p>
+            </div>
+        </div>
+    </div>
+    <div style="margin-left: 140px;margin-top: 40px">
+        <input id="name" type="text" placeholder="" value="">שם לקוח</input>
+    </div>
+    <div style="background-color:lightgrey ;width: 400px;border:15px solid green;padding: 40px;color:red;font-size: 20px;margin-top: 80px;text-align: left;position: static;margin-left: 410px" id="total">
+        <p>total pay :</p>
+        <p id="number"></p>
+    </div>
+    <button style="color: white;background-color: green;padding:18px;margin-right: 50px" type="button" onclick="go()">לביצוע הזמנה</button>
+    <button style="color: white;background-color: red;padding:18px;margin-right: -100px" type="button" onclick="home()">לתפריט הראשי</button>
+    </button>
+    <br></br>
+    <br></br>
+</div>
+<script>
+    var database = firebase.firestore();
+    async function getorders() {
+        const snapshot = await firebase.firestore().collection('orders').get()
+        return snapshot.docs.map(doc => doc.data());
+    }
+
+    function home() {
+        document.location.href = "main.html"
+    }
+    var products = "פרטי הזמנה:\n";
+    var total = 0;
+    document.getElementsByClassName("btn btn-success")[0].addEventListener('click', function() {
+        product0 = document.getElementsByTagName('h5')[0].innerHTML
+        var price = document.getElementsByClassName("1")[0].innerHTML
+        var value = document.getElementsByClassName("list")[0].value
+        var sum = price * value
+        total += sum;
+        products += value + " " + product0 + "\n";
+        bla()
+    })
+    document.getElementsByClassName("btn btn-success")[1].addEventListener('click', function() {
+        product1 = document.getElementsByTagName('h5')[1].innerHTML
+        var price = document.getElementsByClassName("1")[1].innerHTML
+        var value = document.getElementsByClassName("list")[1].value
+        var sum = price * value
+        total += sum;
+        products += product1 + "\n"
+        bla()
+    })
+    document.getElementsByClassName("btn btn-success")[2].addEventListener('click', function() {
+        product2 = document.getElementsByTagName('h5')[2].innerHTML
+        var price = document.getElementsByClassName("1")[2].innerHTML
+        var value = document.getElementsByClassName("list")[2].value
+        var sum = price * value
+        total += sum;
+        products += value + " " + product2 + "\n";
+        bla()
+    })
+    document.getElementsByClassName("btn btn-success")[3].addEventListener('click', function() {
+        product3 = document.getElementsByTagName('h5')[3].innerHTML
+        var price = document.getElementsByClassName("1")[3].innerHTML
+        var value = document.getElementsByClassName("list")[3].value
+        var sum = price * value
+        total += sum;
+        products += value + " " + product3 + "\n";
+        bla()
+    })
+    document.getElementsByClassName("btn btn-success")[4].addEventListener('click', function() {
+        product4 = document.getElementsByTagName('h5')[4].innerHTML
+        var price = document.getElementsByClassName("1")[4].innerHTML
+        var value = document.getElementsByClassName("list")[4].value
+        var sum = price * value
+        total += +sum;
+        products += value + " " + product4 + "\n";
+        bla()
+    })
+    document.getElementsByClassName("btn btn-success")[5].addEventListener('click', function() {
+        product5 = document.getElementsByTagName('h5')[5].innerHTML
+        var price = document.getElementsByClassName("1")[5].innerHTML
+        var value = document.getElementsByClassName("list")[5].value
+        var sum = price * value
+        total += sum;
+        products += value + " " + product5 + "\n";
+        bla()
+    })
+    document.getElementsByClassName("btn btn-success")[6].addEventListener('click', function() {
+        product6 = document.getElementsByTagName('h5')[6].innerHTML
+        var price = document.getElementsByClassName("1")[6].innerHTML
+        var value = document.getElementsByClassName("list")[6].value
+        var sum = price * value
+        total += sum;
+        products += value + " " + product6 + "\n";
+        bla()
+    })
+    document.getElementsByClassName("btn btn-success")[7].addEventListener('click', function() {
+        product7 = document.getElementsByTagName('h5')[7].innerHTML
+        var price = document.getElementsByClassName("1")[7].innerHTML
+        var value = document.getElementsByClassName("list")[7].value
+        var sum = price * value
+        total += sum;
+        products += value + " " + product7 + "\n";
+        bla()
+    })
+    document.getElementsByClassName("btn btn-success")[8].addEventListener('click', function() {
+        var product8 = document.getElementsByTagName('h5')[8].innerHTML
+        var price = document.getElementsByClassName("1")[8].innerHTML
+        var value = document.getElementsByClassName("list")[8].value
+        var sum = price * value
+        total += sum;
+        products += +value + " " + product8 + "\n";
+        bla()
+    })
+
+    function bla() {
+        document.getElementById("number").innerHTML = total;
+    }
+
+    function send() {
+        var database = firebase.firestore();
+        var orders = getorders();
+        orders.then(function(res) {
+            var index = res.length
+            var Name = document.getElementById("name").value
+            var Price = document.getElementById("number").innerText
+            var database = firebase.firestore();
+            database.collection("orders").doc(`${index}`).set({
+                price: Price,
+                name: Name,
+            })
+        })
+    }
+
+    function go() {
+        var txt;
+        if (confirm(products)) {
+            txt = "You pressed OK!";
+            send()
+            alert("ההזמנה בוצעה בהצלחה!")
+        } else {
+            txt = "You pressed Cancel!";
+            alert("הינך מוזמן לשנות את פרטי ההזמנה")
+        }
+    }
+</script>
+</body>
+
+</html>
